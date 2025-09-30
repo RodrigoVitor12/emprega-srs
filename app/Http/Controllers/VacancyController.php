@@ -1,0 +1,56 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use App\Models\Vacancy;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class VacancyController extends Controller
+{
+    public function create()
+    {
+        $user = User::where('id', Auth::id())->select('role')->first();
+        if ($user->role == 2)
+            return view('company.create-job');
+        return redirect()->back();
+    }
+
+    public function detail($id) {
+        $vacancy = Vacancy::where('id', $id)->first();
+        if($vacancy)
+            return view('vacancydetails', ['vacancy' => $vacancy]);
+        return redirect()->back();
+    }
+
+    public function show()
+    {
+        $vacancies = Vacancy::all();
+
+        return view('vacancies', ['vacancies' => $vacancies]);
+    }
+
+    public function store(Request $request)
+    {
+        $user = $request->user();
+        if ($user->role == 2) {
+            try {
+                $user->vacancies()->create([
+                    'title'         => $request['title'],
+                    'description'   => $request['description'],
+                    'salary'        => $request['salary'] ?? 'A Combinar',
+                    'type'          => $request['type'],
+                    'address'       => $request['address'],
+                    'email_contact' => $request['email_contact'],
+                ]);
+                return redirect()
+                    ->route('company.create-job') // ou outra rota que você queira
+                    ->with('success', 'Vaga criada com sucesso!');
+            } catch (\Throwable $error) {
+                // Em produção, você pode querer logar ao invés de dd()
+                return back()->withErrors(['error' => 'Erro ao criar a vaga: ' . $error->getMessage()]);
+            }
+        }
+    }
+}

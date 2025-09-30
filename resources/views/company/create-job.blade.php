@@ -1,0 +1,85 @@
+<x-app-layout>
+    @section('title', 'Criar vagas - EmpregaFacil')
+    @section('content')
+        <div class="py-12">
+            @if (session('success'))
+                <div class="mb-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div class="mb-4 p-4 bg-red-100 text-red-700 rounded-lg">
+                    {{ $errors->first() }}
+                </div>
+            @endif
+            <form action="{{ route('company.store-job') }}" method="POST"
+                class="max-w-2xl mx-auto bg-gradient-to-r from-blue-500  to-blue-700 p-6 rounded-lg shadow">
+                @csrf
+
+                <h2 class="text-2xl font-semibold text-white mb-6">Cadastrar Nova Vaga</h2>
+
+                <!-- title -->
+                <div class="mb-4">
+                    <label for="title" class="block text-sm font-medium text-white mb-1">Título da Vaga</label>
+                    <input type="text" id="title" name="title" placeholder="Ex: Auxiliar de logistica"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        required />
+                </div>
+
+                <!-- Description -->
+                <div class="mb-4">
+                    <label for="description" class="block text-sm font-medium text-white mb-1">Descrição</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Descreva as responsabilidades da vaga"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                </div>
+
+                <!-- type -->
+                <div class="mb-4">
+                    <label for="type" class="block text-sm font-medium text-white mb-1">Tipo</label>
+                    <select id="type" name="type"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        required>
+                        <option value="" disabled selected>Selecione o tipo</option>
+                        <option value="CLT">CLT</option>
+                        <option value="PJ">PJ</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Estágio">Estágio</option>
+                        <option value="Temporário">Temporário</option>
+                    </select>
+                </div>
+
+                <!-- Salary -->
+                <div class="mb-4">
+                    <label for="salary" class="block text-sm font-medium text-white mb-1">Salário</label>
+                    <input type="text" id="salary" name="salary" placeholder="Ex: R$ 4.000,00"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+
+                <!-- Address -->
+                <div class="mb-4">
+                    <label for="address" class="block text-sm font-medium text-white mb-1">Endereço</label>
+                    <input type="text" id="address" name="address"
+                        placeholder="Ex: Centro, 157 - Santa Rita do Sapucai/MG"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+
+                <!-- E-mail Contact -->
+                <div class="mb-6">
+                    <label for="email_contact" class="block text-sm font-medium text-white mb-1">E-mail de
+                        Contato</label>
+                    <input type="email" id="email_contact" name="email_contact" placeholder="empresa@exemplo.com"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        required />
+                </div>
+
+                <div class="flex justify-end">
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                        Publicar Vaga
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    @endsection
+</x-app-layout>
