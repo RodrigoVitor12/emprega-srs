@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Apply;
-use App\Models\User;
 use App\Models\Vacancy;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class VacancyApplicationController extends Controller
@@ -35,10 +33,5 @@ class VacancyApplicationController extends Controller
         } catch (\Throwable $error) {
             return back()->withErrors(['error' => 'Erro ao se candidatar: ' . $error->getMessage()]);
         }
-    }
-
-    function destroy ($id) {
-        Apply::where('user_id', Auth::id())->where('vacancy_id', $id)->delete();
-        return redirect()->route('dashboard')->with('success', 'Candidatura cancelada com sucesso');
     }
 }

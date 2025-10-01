@@ -44,10 +44,8 @@
                                     class="px-2 py-1 rounded-full bg-yellow-200 text-yellow-800">Pendente</span></td>
                             <td class="p-3">{{ $myCandidacy->created_at->format('d/m/Y') }}</td>
                             <td class="p-3">
-                                <form action="{{ route('vacancy.destroy', $myCandidacy->id) }}" method="POST">
-                                    @csrf
                                     <button
-                                        type="submit"
+                                        wire:click="destroy({{$myCandidacy->id}})"
                                         class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
                                     >
                                         Cancelar
@@ -62,3 +60,4 @@
     </section>
 
 </main>
+

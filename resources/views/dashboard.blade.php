@@ -8,11 +8,11 @@
             </div>
         @endif
         @if (auth()->user()->role == 1)
-            <x-dashboard-candidate :myCandidacies="$myCandidacies" />
+            <livewire:dashboard-candidate />
         @endif
 
         @if (auth()->user()->role == 2)
-            <x-dashboard-company :candidates="$candidates" :vacancies="$vacancies" />
+            <livewire:dashboard-company />
         @endif
     @endsection
 </x-app-layout>
