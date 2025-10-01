@@ -25,5 +25,6 @@ class DashboardCompany extends Component
     public function destroy($id) {
         Vacancy::find($id)->delete();
         $this->vacancies = Auth::user()->vacanciesWithCandidacyCount();
+        $this->candidates = Auth::user()->allApplies();
     }
 }
