@@ -1,7 +1,7 @@
 <main class="flex-1 p-8">
     <div class="flex justify-between items-center mb-8">
         <h2 class="text-3xl font-semibold text-[#1447E8]">
-            Olá, {{ auth()->user()->name }}! Bem vindo ao Dashboard 
+            Olá, {{ auth()->user()->name }}! Bem vindo ao Dashboard
         </h2>
     </div>
     <div class="flex flex-col md:flex-row gap-6">
@@ -16,7 +16,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 mt-8">
         <div class="bg-white p-6 rounded-lg shadow">
             <h3 class="text-xl font-semibold mb-2 text-[#1447E8]">Candidaturas Enviadas</h3>
-            <p class="text-3xl font-bold text-blue-600">{{$myCandidacies->count()}}</p>
+            <p class="text-3xl font-bold text-blue-600">{{ $myCandidacies->count() }}</p>
         </div>
     </div>
 
@@ -42,9 +42,17 @@
                             <td class="p-3"></td>
                             <td class="p-3"><span
                                     class="px-2 py-1 rounded-full bg-yellow-200 text-yellow-800">Pendente</span></td>
-                            <td class="p-3">{{ $myCandidacy->created_at->format('d/m/Y')}}</td>
-                            <td class="p-3"><button
-                                    class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Cancelar</button>
+                            <td class="p-3">{{ $myCandidacy->created_at->format('d/m/Y') }}</td>
+                            <td class="p-3">
+                                <form action="{{ route('vacancy.destroy', $myCandidacy->id) }}" method="POST">
+                                    @csrf
+                                    <button
+                                        type="submit"
+                                        class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                                    >
+                                        Cancelar
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

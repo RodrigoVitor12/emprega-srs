@@ -16,8 +16,11 @@ Route::middleware('guest')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
+    //candidate
     Route::get('/detalhe/vaga/{id}', [VacancyController::class, 'detail'])->name('vacancy.detail');
     Route::post('/apply/{id}', [VacancyApplicationController::class, 'apply'])->name('vacancy.apply');
+    Route::post('/cancel-apply/{id}', [VacancyApplicationController::class, 'destroy'])->name('vacancy.destroy');
+
     Route::get('/dashboard', [DashboardController::class, 'index',])->middleware(['auth', 'verified'])->name('dashboard');
 });
 

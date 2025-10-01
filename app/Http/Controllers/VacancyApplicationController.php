@@ -36,4 +36,9 @@ class VacancyApplicationController extends Controller
             return back()->withErrors(['error' => 'Erro ao se candidatar: ' . $error->getMessage()]);
         }
     }
+
+    function destroy ($id) {
+        Apply::where('user_id', Auth::id())->where('vacancy_id', $id)->delete();
+        return redirect()->route('dashboard')->with('success', 'Candidatura cancelada com sucesso');
+    }
 }
