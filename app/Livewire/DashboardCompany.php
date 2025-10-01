@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Vacancy;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -19,5 +20,10 @@ class DashboardCompany extends Component
     public function render()
     {
         return view('livewire.dashboard-company');
+    }
+
+    public function destroy($id) {
+        Vacancy::find($id)->delete();
+        $this->vacancies = Auth::user()->vacanciesWithCandidacyCount();
     }
 }

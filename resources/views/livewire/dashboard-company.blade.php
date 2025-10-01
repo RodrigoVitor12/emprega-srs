@@ -61,7 +61,7 @@
                                 <a href="#" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
                                     Ver Candidatos
                                 </a>
-                                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+                                <button wire:click="destroy({{$vacancy->id}})" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
                                     Encerrar
                                 </button>
                             </td>
