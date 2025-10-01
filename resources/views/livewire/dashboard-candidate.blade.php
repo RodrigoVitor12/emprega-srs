@@ -5,7 +5,7 @@
         </h2>
     </div>
     <div class="flex flex-col md:flex-row gap-6">
-        <a href="#" class="bg-[#155DFC] hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Ver
+        <a href="{{route('vacancies.show')}}" class="bg-[#155DFC] hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Ver
             vagas</a>
         <a href="#" class="bg-[#155DFC] hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Editar
             Curriculo</a>

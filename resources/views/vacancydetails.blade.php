@@ -37,7 +37,22 @@
 
                 <div class="">
                     {{-- Candidatar-se --}}
-                    <a href="#" class="bg-[#155DFC] block text-center py-2 rounded-md text-white mt-3 hover:bg-blue-950 hover:text-blue-500">Candidatar</a>
+                    <form action="{{ route('vacancy.apply', $vacancy->id) }}" method="POST">
+                    @csrf
+                    @if (!auth()->check())
+                        <button type="submit"
+                            class="bg-[#FDC700] block text-center py-2 rounded-md text-blue-900 mt-3 hover:bg-blue-950 hover:text-blue-500 w-full">
+                            Candidatar
+                        </button>
+                    @else
+                        @if (auth()->user()->role != 2)
+                            <button type="submit"
+                                class="bg-[#155DFC] block text-center py-2 rounded-md text-white mt-3 hover:bg-blue-950 hover:text-blue-500 w-full">
+                                Candidatar
+                            </button>
+                        @endif
+                    @endif
+                </form>
                 </div>
             </div>
     @endsection
