@@ -37,6 +37,7 @@ class VacancyController extends Controller
         if ($user->role == 2) {
             try {
                 $user->vacancies()->create([
+                    'name'         => $request['name'],
                     'title'         => $request['title'],
                     'description'   => $request['description'],
                     'salary'        => $request['salary'] ?? 'A Combinar',

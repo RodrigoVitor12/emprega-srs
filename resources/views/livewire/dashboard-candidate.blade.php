@@ -39,7 +39,7 @@
                     @foreach ($myCandidacies as $myCandidacy)
                         <tr class="border-b">
                             <td class="p-3">{{ $myCandidacy->title }}</td>
-                            <td class="p-3"></td>
+                            <td class="p-3">{{ $myCandidacy->name }}</td>
                             <td class="p-3"><span
                                     class="px-2 py-1 rounded-full bg-yellow-200 text-yellow-800">Pendente</span></td>
                             <td class="p-3">{{ $myCandidacy->created_at->format('d/m/Y') }}</td>

@@ -23,7 +23,7 @@
                 {{-- Descrição completa --}}
                 <div class="mb-6">
                     <h2 class="text-xl text-[#155DFC] font-bold mb-2">Descrição da Vaga</h2>
-                    <p class="text-gray-600 leading-relaxed">{{ $vacancy->description }}</p>
+                    <p class="text-gray-600 leading-relaxed">{!! nl2br(e($vacancy->description)) !!}</p>
                 </div>
 
                 {{-- Contato --}}

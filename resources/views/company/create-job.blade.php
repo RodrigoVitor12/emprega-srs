@@ -18,6 +18,13 @@
                 @csrf
 
                 <h2 class="text-2xl font-semibold text-white mb-6">Cadastrar Nova Vaga</h2>
+                <!-- company name -->
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-white mb-1">Nome da empresa</label>
+                    <input type="text" id="name" name="name" placeholder="Ex: Auxiliar de logistica"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        required />
+                </div>
 
                 <!-- title -->
                 <div class="mb-4">
@@ -51,9 +58,10 @@
 
                 <!-- Salary -->
                 <div class="mb-4">
-                    <label for="salary" class="block text-sm font-medium text-white mb-1">Salário</label>
+                    <label for="salary" class="block text-sm font-medium text-white mb-1">Salário (opcional)</label>
                     <input type="text" id="salary" name="salary" placeholder="Ex: R$ 4.000,00"
-                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        oninput="formatSalary(this)" />
                 </div>
 
                 <!-- Address -->
@@ -83,3 +91,14 @@
 
     @endsection
 </x-app-layout>
+
+
+<script>
+    function formatSalary(input) {
+        let value = input.value.replace(/\D/g, ""); // remove tudo que não é número
+        value = (value/100).toFixed(2) + ""; // coloca duas casas decimais
+        value = value.replace(".", ","); // troca ponto por vírgula
+        value = value.replace(/\B(?=(\d{3})+(?!\d))/g, "."); // separador de milhar
+        input.value = "R$ " + value;
+    }
+</script>
