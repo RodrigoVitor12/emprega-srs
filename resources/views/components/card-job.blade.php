@@ -8,12 +8,23 @@
     <p class="text-md text-gray-500">{{$date}} </p>
     <form action="{{ route('vacancy.apply', $id) }}" method="POST">
         @csrf
-        <button 
-            type="submit"
-            class="bg-[#FDC700] block text-center py-2 rounded-md text-blue-900 mt-3 hover:bg-blue-950 hover:text-blue-500 w-full"
-        >
-            Candidatar
-        </button>
+        @if (!auth()->check())
+            <button 
+                type="submit"
+                class="bg-[#FDC700] block text-center py-2 rounded-md text-blue-900 mt-3 hover:bg-blue-950 hover:text-blue-500 w-full"
+            >
+                Candidatar
+            </button>
+        @else
+            @if (auth()->user()->role != 2)
+                <button 
+                    type="submit"
+                    class="bg-[#FDC700] block text-center py-2 rounded-md text-blue-900 mt-3 hover:bg-blue-950 hover:text-blue-500 w-full"
+                >
+                    Candidatar
+                </button>
+            @endif
+        @endif
     </form>
     <a href="{{ route('vacancy.detail', $id) }}" class="bg-[#FDC700] block text-center py-2 rounded-md text-blue-900 mt-3 hover:bg-blue-950 hover:text-blue-500">Ver Detalhes</a>
 </div>
