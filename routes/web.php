@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginRegisterAsWhoController;
@@ -27,6 +28,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/criar-vagas', [VacancyController::class, 'create'])->name('company.create-job');
     Route::post('/criar-vagas', [VacancyController::class, 'store'])->name('company.store-job');
+    Route::get('/candidatos', [CandidateController::class, 'show'])->name('company.candidates');
 });
 
 Route::get('/sobre', [AboutController::class, 'index'])->name('aboutUs');
