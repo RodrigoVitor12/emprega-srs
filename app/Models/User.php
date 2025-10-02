@@ -43,13 +43,13 @@ class User extends Authenticatable
         ];
     }
 
-    // Um usuario cria varias vagas
+    // A user create many vacancies
     public function vacancies() 
     {
         return $this->hasMany(Vacancy::class);
     }
 
-    // Um usuario aplica a varias vagas
+    // A user apply a many vacancies
     public function appliedVacancies()
     {
         return $this->belongsToMany(Vacancy::class, 'applies')->withTimestamps();
@@ -60,20 +60,28 @@ class User extends Authenticatable
         return $this->hasManyThrough(Apply::class, Vacancy::class);
     }
 
-    // Retorna minhas candidaturas como usuario candidato
+    // Return my applies as user candidate
     public function allMyCandidacies () {
         return $this->appliedVacancies()->with('user')->get();
     }
 
-    // Retorna as vagas do usuário com contagem de candidaturas
+    // Return all vacancies of user candidate with count
     public function vacanciesWithCandidacyCount()
     {
         return $this->vacancies()->where('user_id', Auth::id())->withCount('applies')->get();
     }
 
-    // Retorna todas as candidaturas que o usuário empresa recebeu
+    // Return all applies the user company has.
     public function allApplies()
     {
         return $this->applies()->with('user')->get();
+    }
+
+    // Return all my candidates as user company
+    public function allMyCandidates () 
+    {
+        return Apply::whereHas('vacancy', function($q) {
+            $q->where('user_id', $this->id);
+        });
     }
 }
