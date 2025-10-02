@@ -8,6 +8,7 @@
                     <thead class="bg-[#1447E8]">
                         <tr>
                             <th class="p-3 text-left text-white">Nome do Candidato</th>
+                            <th class="p-3 text-left text-white">Ver curriculo</th>
                             <th class="p-3 text-left text-white">Whatsapp</th>
                             <th class="p-3 text-left text-white">E-mail</th>
                             <th class="p-3 text-left text-white">Vaga Candidatada</th>
@@ -17,6 +18,7 @@
                         @foreach ($candidates as $candidate)
                             <tr class="hover:bg-gray-100">
                                 <td class="p-3 whitespace-nowrap">{{ $candidate->user->name }}</td>
+                                <td class="p-3 whitespace-nowrap">{{ $candidate->user->curriculum }}</td>
                                 <td class="p-3 whitespace-nowrap">
                                     @php
                                         $phone = preg_replace('/\D/', '', $candidate->user->phone); // remove tudo que não é número

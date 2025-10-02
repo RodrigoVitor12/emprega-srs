@@ -36,8 +36,8 @@ new class extends Component
                     <x-nav-link :href="route('vacancies.show')" :active="request()->routeIs('vacancies.show')" wire:navigate>
                         {{ __('Vagas') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('aboutUs')" :active="request()->routeIs('aboutUs')" wire:navigate>
-                        {{ __('Sobre') }}
+                    <x-nav-link :href="route('profile', auth()->user()->id)" :active="request()->routeIs('profile')" wire:navigate>
+                        {{ __('Perfil') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -58,10 +58,6 @@ new class extends Component
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile')" wire:navigate>
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
-
                         <!-- Authentication -->
                         <button wire:click="logout" class="w-full text-start">
                             <x-dropdown-link>
@@ -93,9 +89,6 @@ new class extends Component
             <x-responsive-nav-link :href="route('vacancies.show')" :active="request()->routeIs('vacancies.show')" wire:navigate>
                 {{ __('Vagas') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('aboutUs')" :active="request()->routeIs('aboutUs')" wire:navigate>
-                {{ __('Sobre') }}
-            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -106,7 +99,7 @@ new class extends Component
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile')" wire:navigate>
+                <x-responsive-nav-link :href="route('profile', auth()->user()->id)" wire:navigate>
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
 
