@@ -51,8 +51,8 @@
                         <option value="CLT">CLT</option>
                         <option value="PJ">PJ</option>
                         <option value="Freelancer">Freelancer</option>
-                        <option value="Estágio">Estágio</option>
-                        <option value="Temporário">Temporário</option>
+                        <option value="Estagio">Estágio</option>
+                        <option value="Temporario">Temporário</option>
                     </select>
                 </div>
 

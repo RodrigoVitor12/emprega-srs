@@ -17,9 +17,10 @@ class VacancyController extends Controller
         return redirect()->back();
     }
 
-    public function detail($id) {
+    public function detail($id)
+    {
         $vacancy = Vacancy::where('id', $id)->first();
-        if($vacancy)
+        if ($vacancy)
             return view('vacancydetails', ['vacancy' => $vacancy]);
         return redirect()->back();
     }
@@ -40,7 +41,9 @@ class VacancyController extends Controller
                     'name'         => $request['name'],
                     'title'         => $request['title'],
                     'description'   => $request['description'],
-                    'salary'        => $request['salary'] ?? 'A Combinar',
+                    'salary' => ($request['salary'] && $request['salary'] !== "R$ 0,00")
+                        ? $request['salary']
+                        : 'A Combinar',
                     'type'          => $request['type'],
                     'address'       => $request['address'],
                     'email_contact' => $request['email_contact'],
