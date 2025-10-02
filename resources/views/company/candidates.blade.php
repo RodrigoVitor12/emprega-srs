@@ -3,26 +3,36 @@
 
     @section('content')
         <div class="p-6">
-            <table class="min-w-full bg-white rounded-lg shadow">
-    
-                <thead>
-                    <tr class="bg-[#1447E8] text-left">
-                        <th class="p-3 text-white">Nome do Candidato</th>
-                        <th class="p-3 text-white">Whatsapp</th>
-                        <th class="p-3 text-white">E-mail</th>
-                        <th class="p-3 text-white">Vaga candidatada</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b">
-                        <td class="p-3">Joao</td>
-                        <td class="p-3">
-                            <a href="#" class="text-blue-900 underline">35 997401598</a></td>
-                        <td class="p-3">joao@gmail.com</td>
-                        <td class="p-3">Auxiliar</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg shadow divide-y divide-gray-200">
+                    <thead class="bg-[#1447E8]">
+                        <tr>
+                            <th class="p-3 text-left text-white">Nome do Candidato</th>
+                            <th class="p-3 text-left text-white">Whatsapp</th>
+                            <th class="p-3 text-left text-white">E-mail</th>
+                            <th class="p-3 text-left text-white">Vaga Candidatada</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        @foreach ($candidates as $candidate)
+                            <tr class="hover:bg-gray-100">
+                                <td class="p-3 whitespace-nowrap">{{ $candidate->user->name }}</td>
+                                <td class="p-3 whitespace-nowrap">
+                                    @php
+                                        $phone = preg_replace('/\D/', '', $candidate->user->phone); // remove tudo que não é número
+                                    @endphp
+                                    <a href="https://wa.me/{{ $phone }}" target="_blank" class="text-blue-900 underline">
+                                        {{ $candidate->user->phone }}
+                                    </a>
+                                </td>
+                                <td class="p-3 whitespace-nowrap">{{ $candidate->user->email }}</td>
+                                <td class="p-3 whitespace-nowrap">{{ $candidate->vacancy->title }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
+
     @endsection
 </x-app-layout>

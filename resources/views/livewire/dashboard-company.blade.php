@@ -31,7 +31,7 @@
             <h2 class="text-xl font-bold text-[#1447E8]">Vagas Publicadas</h2>
 
             <!-- Botão extra para ver candidatos -->
-            <a href="#"
+            <a href="{{ route('company.candidates') }}"
                 class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-200 transition">
                 Ver Todos Candidatos
             </a>
@@ -58,9 +58,6 @@
                             </td>
                             <td class="p-3">{{ $vacancy->created_at->format('d/m/Y') }}</td>
                             <td class="p-3 flex gap-2">
-                                <a href="#" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
-                                    Ver Candidatos
-                                </a>
                                 <button wire:click="destroy({{$vacancy->id}})" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
                                     Encerrar
                                 </button>
