@@ -9,4 +9,8 @@ class ResumeController extends Controller
     public function create() {
         return view('create-resume');
     }
+
+    public function show($id) {
+        return view('show-resume');
+    }
 }

@@ -7,9 +7,9 @@
     <div class="flex flex-col md:flex-row gap-6">
         <a href="{{route('vacancies.show')}}" class="bg-green-600 hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Ver
             vagas</a>
-        <a href="#" class="bg-green-600 hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Editar
+        <a href="{{ route('create.resume') }}" class="bg-green-600 hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Criar
             Curriculo</a>
-        <a href="#" class="bg-green-600 hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Ver
+        <a href="{{ route('show.resume', 1) }}" class="bg-green-600 hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Ver
             curriculo</a>
     </div>
     <!-- Dashboard Cards -->
