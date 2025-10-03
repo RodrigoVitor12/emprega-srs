@@ -35,10 +35,11 @@
 
                     <div class="ml-auto space-x-2">
                         @if ($user->role != 2 && $user->id == auth()->user()->id)
-                            <button
+                            <a
+                                href="{{ route('create.resume') }}"
                                 class="px-4 py-2 bg-green-600 text-white rounded-xl shadow hover:bg-green-700 transition">
                                 Criar Currículo
-                            </button>
+                            </a>
                     </div>
                     @endif
                     @if ($user->id != auth()->user()->id && $user->role != 2)

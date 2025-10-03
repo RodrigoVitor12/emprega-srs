@@ -42,6 +42,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    
+    public function resume() {
+        return $this->hasOne(Resume::class);
+    }
 
     // A user create many vacancies
     public function vacancies() 

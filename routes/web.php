@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginRegisterAsWhoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\VacancyApplicationController;
 use App\Http\Controllers\VacancyController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,7 @@ Route::middleware('auth')->group(function () {
     //candidate
     Route::get('/detalhe/vaga/{id}', [VacancyController::class, 'detail'])->name('vacancy.detail');
     Route::post('/apply/{id}', [VacancyApplicationController::class, 'apply'])->name('vacancy.apply');
+    Route::get('/criar-curriculo', [ResumeController::class, 'create'])->name('create.resume');
 
     Route::get('/dashboard', [DashboardController::class, 'index',])->middleware(['auth', 'verified'])->name('dashboard');
     Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile');
