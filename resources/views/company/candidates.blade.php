@@ -18,7 +18,11 @@
                         @foreach ($candidates as $candidate)
                             <tr class="hover:bg-gray-100">
                                 <td class="p-3 whitespace-nowrap">{{ $candidate->user->name }}</td>
-                                <td class="p-3 whitespace-nowrap">{{ $candidate->user->curriculum }}</td>
+                                <td class="p-3 whitespace-nowrap">
+                                    <a class="text-blue-400 hover:text-blue-600 hover:underline" href="{{ route('show.resume', $candidate->user->id) }}"> 
+                                        Ver curriculo
+                                    </a>
+                                </td>
                                 <td class="p-3 whitespace-nowrap">
                                     @php
                                         $phone = preg_replace('/\D/', '', $candidate->user->phone); // remove tudo que não é número
