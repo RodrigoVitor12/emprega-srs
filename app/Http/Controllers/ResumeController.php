@@ -13,7 +13,11 @@ class ResumeController extends Controller
     }
 
     public function show($id) {
-        return view('show-resume');
+        $data = Resume::where('user_id', $id)->first();
+        if(!$data) {
+            return redirect()->back();
+        }
+        return view('show-resume', ['data' => $data]);
     }
 
     public function store(Request $request) {

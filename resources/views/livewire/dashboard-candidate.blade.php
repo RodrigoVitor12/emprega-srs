@@ -9,7 +9,7 @@
             vagas</a>
         <a href="{{ route('create.resume') }}" class="bg-green-600 hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Criar
             Curriculo</a>
-        <a href="{{ route('show.resume', 1) }}" class="bg-green-600 hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Ver
+        <a href="{{ route('show.resume', auth()->user()->id) }}" class="bg-green-600 hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Ver
             curriculo</a>
     </div>
     <!-- Dashboard Cards -->
