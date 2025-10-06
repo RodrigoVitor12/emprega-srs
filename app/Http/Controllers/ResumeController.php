@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 class ResumeController extends Controller
 {
     public function create() {
-        return view('create-resume');
+        $data = Resume::where('user_id', Auth::id())->first();
+        return view('create-resume', ['data' => $data]);
     }
 
     public function show($id) {
