@@ -9,8 +9,13 @@ use Illuminate\Support\Facades\Auth;
 class ResumeController extends Controller
 {
     public function create() {
-        $data = Resume::where('user_id', Auth::id())->first();
+        $data = Resume::where('user_id', Auth::id())->select('user_id')->first();
         return view('create-resume', ['data' => $data]);
+    }
+
+    public function pageUpdate() {
+        $data = Resume::where('user_id', Auth::id())->first();
+        return view('update-resume', ['data' => $data]);
     }
 
     public function show($id) {
@@ -30,6 +35,22 @@ class ResumeController extends Controller
             return redirect()->back()->with('success', 'Currículo criado com sucesso!');
         } catch (\Throwable $th) {
             return "Erro ao criar: " . $th->getMessage();
+        }
+    }
+
+    public function update($id, Request $request) {
+        $resume = Resume::find($id);
+        $data = $request->all();
+
+        if(!$resume) {
+            return redirect()->back();
+        }
+
+        try {
+            $resume->update($data);
+            return redirect()->back()->with('success', 'Currículo atualizado com sucesso!');
+        } catch (\Throwable $th) {
+            return "erro: " . $th->getMessage();
         }
     }
 }
