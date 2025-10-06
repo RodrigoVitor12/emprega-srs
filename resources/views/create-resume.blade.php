@@ -3,32 +3,37 @@
 
     @section('content')
         <div class="p-8">
+            @if (session('success'))
+                <div class="mb-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div
                 class="max-w-3xl mx-auto bg-white p-8 shadow-lg rounded-xl space-y-6 bg-gradient-to-r from-blue-500  to-blue-700">
                 <h1 class="text-2xl font-bold mb-4 text-center text-white">Criar Currículo</h1>
 
-                <form action="" method="POST">
+                <form action="{{ route('store.resume') }}" method="POST">
                     @csrf
                     <div>
                         <h2 class="text-lg text-white font-semibold mb-2">Dados Pessoais</h2>
-                            <input type="text" name="full_name" placeholder="Nome Completo" class="border p-2 rounded w-full mb-2">
-                            <input type="email" name="email" placeholder="E-mail" class="border p-2 rounded w-full mb-2">
-                            <input type="text" name="phone" placeholder="Telefone / WhatsApp"
+                            <input required type="text" name="full_name" placeholder="Nome Completo" class="border p-2 rounded w-full mb-2">
+                            <input required type="email" name="email" placeholder="E-mail" class="border p-2 rounded w-full mb-2">
+                            <input required type="text" name="phone" placeholder="Telefone / WhatsApp"
                                 class="border p-2 rounded w-full mb-2">
-                            <input type="text" name="city" placeholder="Cidade / Estado"
+                            <input required type="text" name="city" placeholder="Cidade / Estado"
                                 class="border p-2 rounded w-full mb-2">
                     </div>
 
                     <div>
                         <h2 class="text-lg font-semibold mb-2 text-white">Resumo / Objetivo</h2>
-                        <textarea name="summary" rows="3" class="border p-2 rounded w-full"
+                        <textarea required name="summary" rows="3" class="border p-2 rounded w-full"
                             placeholder="Escreva um resumo sobre você e seus objetivos profissionais"></textarea>
                     </div>
 
                     <div>
                         <h2 class="text-lg font-semibold mb-2 text-white">Formação</h2>
 
-                        <select name="course_type" class="border p-2 rounded w-full mb-2">
+                        <select name="course_type" class="border p-2 rounded w-full mb-2" required>
                             <option value="">Selecione o tipo de curso</option>
                             <option value="high_school">Ensino Médio</option>
                             <option value="technical">Curso Técnico</option>
@@ -36,9 +41,9 @@
                         </select>
 
                         <input type="text" name="institution" placeholder="Instituição"
-                            class="border p-2 rounded w-full mb-2">
+                            class="border p-2 rounded w-full mb-2" required>
 
-                        <select name="completion_status" class="border p-2 rounded w-full mb-2">
+                        <select name="completion_status" class="border p-2 rounded w-full mb-2" required>
                             <option value="">Selecione o status</option>
                             <option value="in_progress">Em andamento</option>
                             <option value="completed">Concluído</option>

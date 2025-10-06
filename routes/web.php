@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/apply/{id}', [VacancyApplicationController::class, 'apply'])->name('vacancy.apply');
     Route::get('/criar-curriculo', [ResumeController::class, 'create'])->name('create.resume');
     Route::get('/curriculo/{id}', [ResumeController::class, 'show'])->name('show.resume');
+    Route::post('/criar-curriculo', [ResumeController::class, 'store'])->name('store.resume');
 
     Route::get('/dashboard', [DashboardController::class, 'index',])->middleware(['auth', 'verified'])->name('dashboard');
     Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile');
