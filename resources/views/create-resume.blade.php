@@ -18,7 +18,7 @@
                         <h2 class="text-lg text-white font-semibold mb-2">Dados Pessoais</h2>
                             <input required type="text" name="full_name" placeholder="Nome Completo" class="border p-2 rounded w-full mb-2">
                             <input required type="email" name="email" placeholder="E-mail" class="border p-2 rounded w-full mb-2">
-                            <input required type="text" name="phone" placeholder="Telefone / WhatsApp"
+                            <input required type="text" id="phone" name="phone" placeholder="Telefone / WhatsApp"
                                 class="border p-2 rounded w-full mb-2">
                             <input required type="text" name="city" placeholder="Cidade / Estado"
                                 class="border p-2 rounded w-full mb-2">
@@ -35,19 +35,19 @@
 
                         <select name="course_type" class="border p-2 rounded w-full mb-2" required>
                             <option value="">Selecione o tipo de curso</option>
-                            <option value="high_school">Ensino Médio</option>
-                            <option value="technical">Curso Técnico</option>
-                            <option value="college">Faculdade / Graduação</option>
+                            <option value="Ensino Medio">Ensino Médio</option>
+                            <option value="Curso Tecnico">Curso Técnico</option>
+                            <option value="Graduação">Faculdade / Graduação</option>
                         </select>
 
-                        <input type="text" name="institution" placeholder="Instituição"
+                        <input type="text" name="institution" placeholder="Instituição - nome do curso"
                             class="border p-2 rounded w-full mb-2" required>
 
                         <select name="completion_status" class="border p-2 rounded w-full mb-2" required>
                             <option value="">Selecione o status</option>
-                            <option value="in_progress">Em andamento</option>
-                            <option value="completed">Concluído</option>
-                            <option value="not_completed">Não Concluido</option>
+                            <option value="Em andamento">Em andamento</option>
+                            <option value="Concluido">Concluído</option>
+                            <option value="Não Conclui">Não Concluido</option>
                         </select>
                     </div>
 
@@ -105,3 +105,18 @@
         </div>
     @endsection
 </x-app-layout>
+
+<script src="https://unpkg.com/imask"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        IMask(phoneInput, {
+            mask: [
+                { mask: '(00) 00000-0000' }, // celular
+                { mask: '(00) 0000-0000' }   // fixo
+            ]
+        });
+    }
+});
+</script>
