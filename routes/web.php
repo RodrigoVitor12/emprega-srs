@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -30,6 +31,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index',])->middleware(['auth', 'verified'])->name('dashboard');
     Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile');
+
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index');
 });
 
 // Company
