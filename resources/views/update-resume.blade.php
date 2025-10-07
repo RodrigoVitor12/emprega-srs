@@ -12,6 +12,8 @@
                 <div class="mb-4 p-4 bg-green-100 text-green-700 rounded-lg">
                     <p>Você precisa criar um curriculo para poder editar</p>
                 </div>
+                <a href="{{ route('create.resume') }}" class="bg-green-600 hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Criar
+        Curriculo</a>
             @else
                 <div
                     class="max-w-3xl mx-auto bg-white p-8 shadow-lg rounded-xl space-y-6 bg-gradient-to-r from-blue-500  to-blue-700">
@@ -86,8 +88,7 @@
                                     class="border p-2 rounded w-full mb-2">
                                 <input type="text" value="{{$data->experience_2_period}}" name="experience_2_period" placeholder="Período (ex: 2022 - Atual)"
                                     class="border p-2 rounded w-full mb-2">
-                                <textarea name="experience_2_activities" placeholder="Principais atividades" class="border p-2 rounded w-full mb-2">
-                                    {{$data->experience_2_activities}}
+                                <textarea name="experience_2_activities" placeholder="Principais atividades" class="border p-2 rounded w-full mb-2">{{$data->experience_2_activities}}
                                 </textarea>
                             </div>
                         </div>

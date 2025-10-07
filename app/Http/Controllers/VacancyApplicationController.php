@@ -24,7 +24,6 @@ class VacancyApplicationController extends Controller
             Apply::create([
                 'user_id' => Auth::id(),
                 'vacancy_id' => $vacancy->id,
-                'curriculum' => '0'
             ]);
 
             return redirect()

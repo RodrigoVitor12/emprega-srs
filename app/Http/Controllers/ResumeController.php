@@ -32,7 +32,7 @@ class ResumeController extends Controller
 
         try {
             Resume::create($data);
-            return redirect()->back()->with('success', 'Currículo criado com sucesso!');
+            return redirect()->route('show.resume', Auth::id());
         } catch (\Throwable $th) {
             return "Erro ao criar: " . $th->getMessage();
         }
