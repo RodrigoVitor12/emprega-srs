@@ -18,7 +18,7 @@ class AdminController extends Controller
         if(Auth::user()->role != 0) {
             return redirect()->back();
         }
-        $users = User::all();
+        $users = User::paginate(10);
         $vacancies = Vacancy::with('user')->get();
 
         return view('admin.index', compact('users', 'vacancies'));
