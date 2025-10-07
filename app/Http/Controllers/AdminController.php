@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Vacancy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,6 +18,10 @@ class AdminController extends Controller
         if(Auth::user()->role != 0) {
             return redirect()->back();
         }
-        return view('admin.index');
+        $users = User::all();
+        $vacancies = Vacancy::with('user')->get();
+
+        return view('admin.index', compact('users', 'vacancies'));
+
     }
 }
