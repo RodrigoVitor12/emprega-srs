@@ -69,20 +69,20 @@
                                     class="border p-2 rounded w-full mb-2">
                                 <input type="text" name="experience_1_company" placeholder="Empresa"
                                     class="border p-2 rounded w-full mb-2">
-                                <input type="text" name="experience_1_period" placeholder="Período (ex: 2022 - Atual)"
+                                <input type="text" name="experience_1_period" placeholder="Período (ex: Fevereiro 2025 - Outubro 2025)"
                                     class="border p-2 rounded w-full mb-2">
                                 <textarea name="experience_1_activities" placeholder="Principais atividades" class="border p-2 rounded w-full mb-2"></textarea>
                             </div>
 
                             <div class="p-4 mb-4">
                                 <span class="text-white">Experiência 2</span>
-                                <input type="text" name="experience_2_position" placeholder="Cargo / Função (opcional)"
+                                <input type="text" name="experience_2_position" placeholder="Cargo / Função"
                                     class="border p-2 rounded w-full mb-2">
-                                <input type="text" name="experience_2_company" placeholder="Empresa (opcional)"
+                                <input type="text" name="experience_2_company" placeholder="Empresa"
                                     class="border p-2 rounded w-full mb-2">
-                                <input type="text" name="experience_2_period" placeholder="Período (opcional)"
+                                <input type="text" name="experience_2_period" placeholder="Período Fevereiro 2025 - Outubro 2025"
                                     class="border p-2 rounded w-full mb-2">
-                                <textarea name="experience_2_activities" placeholder="Principais atividades (opcional)"
+                                <textarea name="experience_2_activities" placeholder="Principais atividades"
                                     class="border p-2 rounded w-full mb-2"></textarea>
                             </div>
                         </div>

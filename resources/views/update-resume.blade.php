@@ -71,7 +71,7 @@
                                     class="border p-2 rounded w-full mb-2">
                                 <input value="{{$data->experience_1_company}}" type="text" name="experience_1_company" placeholder="Empresa"
                                     class="border p-2 rounded w-full mb-2">
-                                <input type="text" value="{{$data->experience_1_period}}" name="experience_1_period" placeholder="Período (ex: 2022 - Atual)"
+                                <input type="text" value="{{$data->experience_1_period}}" name="experience_1_period" placeholder="Período (ex: Fevereiro 2025 - Outubro 2025)"
                                     class="border p-2 rounded w-full mb-2">
                                 <textarea name="experience_1_activities" placeholder="Principais atividades" class="border p-2 rounded w-full mb-2">
                                     {{$data->experience_1_activities}}
