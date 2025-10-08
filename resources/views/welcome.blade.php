@@ -23,7 +23,7 @@
             <h2 class="text-3xl text-white font-bold text-center mt-12">Vagas recentes</h2>
             <div class="flex flex-col md:flex-row gap-4 justify-center mt-6">
                 @foreach ($vacancies->take(3) as $vacancy)
-                    <x-card-job :id="$vacancy->id" :userid="$vacancy->user_id" :title="$vacancy->title" :company="$vacancy->name" :city="$vacancy->address"
+                    <x-card-job :id="$vacancy->id" :role="$vacancy->user->role" :title="$vacancy->title" :company="$vacancy->name" :city="$vacancy->address"
                         :date="$vacancy->created_at->format('d/m/Y')" />
                 @endforeach
             </div>

@@ -13,17 +13,17 @@ class CardJob extends Component
     public $company;
     public $date;
     public $id;
-    public $userid;
+    public $role;
     
 
-    public function __construct($title, $city, $company, $date, $id, $userid)
+    public function __construct($title, $city, $company, $date, $id, $role)
     {
         $this->title = $title;
         $this->city = $city;
         $this->company = $company;
         $this->date = $date;
         $this->id = $id;
-        $this->userid = $userid;
+        $this->role = $role;
     }
 
     /**
