@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Vagas de Emprego - Meu Site')
+@section('title', 'Vagas de Emprego - MaoNaVaga')
 
 @section('content')
     <section class="px-8 py-6">
@@ -14,13 +14,15 @@
         <div class="grid md:grid-cols-3 gap-6 py-8 justify-center">
             @guest
                 @foreach ($vacancies->take(3) as $vacancy)
-                    <x-card-job :id="$vacancy->id" :userid="$vacancy->user_id" :title="$vacancy->title" :company="$vacancy->name" :city="$vacancy->address" :date="$vacancy->created_at->format('d/m/Y')"  />
+                    <x-card-job :id="$vacancy->id" :userid="$vacancy->user_id" :title="$vacancy->title" :company="$vacancy->name" :city="$vacancy->address"
+                        :date="$vacancy->created_at->format('d/m/Y')" />
                 @endforeach
             @endguest
 
             @auth
                 @foreach ($vacancies as $vacancy)
-                    <x-card-job :id="$vacancy->id" :userid="$vacancy->user_id" :title="$vacancy->title" :company="$vacancy->name" :city="$vacancy->address" :date="$vacancy->created_at->format('d/m/Y')" />
+                    <x-card-job :id="$vacancy->id" :userid="$vacancy->user_id" :title="$vacancy->title" :company="$vacancy->name" :city="$vacancy->address"
+                        :date="$vacancy->created_at->format('d/m/Y')" />
                 @endforeach
             @endauth
         </div>

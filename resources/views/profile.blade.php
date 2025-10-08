@@ -1,7 +1,7 @@
 <x-app-layout>
-    @section('title', 'Meu Perfil - EmpregaFacil')
+    @section('title', 'Meu Perfil - MaoNaVaga')
 
-    @section('content')     
+    @section('content')
         <div class="bg-white shadow rounded-2xl p-6 mt-4">
             <x-slot name="header">
                 <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">

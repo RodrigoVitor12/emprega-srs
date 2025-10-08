@@ -1,5 +1,5 @@
 <x-app-layout>
-    @section('title', 'Dashboard - EmpregaFacil')
+    @section('title', 'Dashboard - MaoNaVaga')
 
     @section('content')
         @if (session('success'))
@@ -7,7 +7,7 @@
                 {{ session('success') }}
             </div>
         @endif
-        @if (auth()->user()->role == 1 )
+        @if (auth()->user()->role == 1)
             <livewire:dashboard-candidate />
         @endif
 

@@ -1,5 +1,5 @@
 <x-app-layout>
-    @section('title', 'Meus Candidatos - EmpregaFacil')
+    @section('title', 'Meus Candidatos - MaoNaVaga')
 
     @section('content')
         <div class="p-6">
@@ -19,7 +19,8 @@
                             <tr class="hover:bg-gray-100">
                                 <td class="p-3 whitespace-nowrap">{{ $candidate->user->name }}</td>
                                 <td class="p-3 whitespace-nowrap">
-                                    <a class="text-blue-400 hover:text-blue-600 hover:underline" href="{{ route('show.resume', $candidate->user->id) }}"> 
+                                    <a class="text-blue-400 hover:text-blue-600 hover:underline"
+                                        href="{{ route('show.resume', $candidate->user->id) }}">
                                         Ver curriculo
                                     </a>
                                 </td>
@@ -27,7 +28,8 @@
                                     @php
                                         $phone = preg_replace('/\D/', '', $candidate->user->phone); // remove tudo que não é número
                                     @endphp
-                                    <a href="https://wa.me/{{ $phone }}" target="_blank" class="text-blue-900 underline">
+                                    <a href="https://wa.me/{{ $phone }}" target="_blank"
+                                        class="text-blue-900 underline">
                                         {{ $candidate->user->phone }}
                                     </a>
                                 </td>

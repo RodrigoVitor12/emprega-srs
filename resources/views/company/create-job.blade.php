@@ -1,5 +1,5 @@
 <x-app-layout>
-    @section('title', 'Criar vagas - EmpregaFacil')
+    @section('title', 'Criar vagas - MaoNaVaga')
     @section('content')
         <div class="py-12">
             @if (session('success'))
@@ -21,7 +21,7 @@
                 <!-- company name -->
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-white mb-1">Nome da empresa</label>
-                    <input type="text" id="name" name="name" 
+                    <input type="text" id="name" name="name"
                         class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required />
                 </div>
@@ -42,7 +42,8 @@
                 </div>
                 {{-- requirements --}}
                 <div class="mb-4">
-                    <label for="requirements" class="block text-sm font-medium text-white mb-1">Requisitos (opcional)</label>
+                    <label for="requirements" class="block text-sm font-medium text-white mb-1">Requisitos
+                        (opcional)</label>
                     <textarea id="requirements" name="requirements" rows="4" placeholder="Descreva os requisitos."
                         class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
                 </div>
@@ -86,7 +87,8 @@
 
                 <!-- E-mail or Whatsapp Contact -->
                 <div class="mb-6">
-                    <label for="email_contact" class="block text-sm font-medium text-white mb-1">E-mail ou whatsapp para envio de curriculo</label>
+                    <label for="email_contact" class="block text-sm font-medium text-white mb-1">E-mail ou whatsapp para
+                        envio de curriculo</label>
                     <input type="text" id="email_contact" name="email_contact" placeholder="empresa@exemplo.com"
                         class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required />
@@ -107,7 +109,7 @@
 <script>
     function formatSalary(input) {
         let value = input.value.replace(/\D/g, ""); // remove tudo que não é número
-        value = (value/100).toFixed(2) + ""; // coloca duas casas decimais
+        value = (value / 100).toFixed(2) + ""; // coloca duas casas decimais
         value = value.replace(".", ","); // troca ponto por vírgula
         value = value.replace(/\B(?=(\d{3})+(?!\d))/g, "."); // separador de milhar
         input.value = "R$ " + value;
