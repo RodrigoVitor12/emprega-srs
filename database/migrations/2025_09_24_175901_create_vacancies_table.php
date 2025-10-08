@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('title');
             $table->text('description');
+            $table->text('requirements')->nullable();
+            $table->text('benefits')->nullable();
             $table->string('salary');
             $table->string('address');
             $table->string('email_contact');

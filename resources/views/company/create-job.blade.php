@@ -40,6 +40,18 @@
                     <textarea id="description" name="description" rows="4" placeholder="Descreva as responsabilidades da vaga"
                         class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
                 </div>
+                {{-- requirements --}}
+                <div class="mb-4">
+                    <label for="requirements" class="block text-sm font-medium text-white mb-1">Requisitos (opcional)</label>
+                    <textarea id="requirements" name="requirements" rows="4" placeholder="Descreva os requisitos."
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                {{-- benefits --}}
+                <div class="mb-4">
+                    <label for="benefits" class="block text-sm font-medium text-white mb-1">Beneficios (opcional)</label>
+                    <textarea id="benefits" name="benefits" rows="4" placeholder="Descreva os beneficios."
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
 
                 <!-- type -->
                 <div class="mb-4">
@@ -72,10 +84,10 @@
                         class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
                 </div>
 
-                <!-- E-mail Contact -->
+                <!-- E-mail or Whatsapp Contact -->
                 <div class="mb-6">
-                    <label for="email_contact" class="block text-sm font-medium text-white mb-1">E-mail para envio de curriculo</label>
-                    <input type="email" id="email_contact" name="email_contact" placeholder="empresa@exemplo.com"
+                    <label for="email_contact" class="block text-sm font-medium text-white mb-1">E-mail ou whatsapp para envio de curriculo</label>
+                    <input type="text" id="email_contact" name="email_contact" placeholder="empresa@exemplo.com"
                         class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required />
                 </div>

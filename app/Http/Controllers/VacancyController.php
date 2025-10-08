@@ -41,6 +41,8 @@ class VacancyController extends Controller
                     'name'         => $request['name'],
                     'title'         => $request['title'],
                     'description'   => $request['description'],
+                    'requirements'   => $request['requirements'],
+                    'benefits'   => $request['benefits'],
                     'salary' => ($request['salary'] && $request['salary'] !== "R$ 0,00")
                         ? $request['salary']
                         : 'A Combinar',
