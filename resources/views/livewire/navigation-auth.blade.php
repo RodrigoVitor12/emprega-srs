@@ -23,7 +23,7 @@ new class extends Component {
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" wire:navigate class="text-white font-bold">
-                        MaoNaVaga
+                        <img src="/images/logo.png" alt="maonavaga">
                     </a>
                 </div>
 

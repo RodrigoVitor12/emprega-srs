@@ -3,8 +3,9 @@
         <div class="flex justify-between h-16">
             <!-- Logo -->
             <div class="flex items-center">
-                <a href="#" class="text-2xl font-bold text-white"><ion-icon
-                        name="search-outline"></ion-icon>MaoNaVaga</a>
+                <a href="#" class="text-2xl font-bold text-white">
+                        <img src="/images/logo.png" alt="maonavaga">
+                </a>
             </div>
 
             <!-- Menu -->
