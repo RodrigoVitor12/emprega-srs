@@ -13,15 +13,15 @@
 
         <div class="flex flex-col">
             <p class="text-2xl font-bold mb-3">Para Candidatos</p>
-            <a href="#" class="text-gray-300 mb-3 hover:text-white">Buscar vagas</a>
-            <a href="#" class="text-gray-300 hover:text-white">Criar Curriculo</a>
+            <a href="{{ route('vacancies.show') }}" class="text-gray-300 mb-3 hover:text-white">Buscar vagas</a>
+            <a href="{{ route('create.resume') }}" class="text-gray-300 hover:text-white">Criar Curriculo</a>
         </div>
 
         <div class="flex flex-col">
             <p class="text-2xl mb-3 font-bold">Para empresas</p>
-            <a href="#" class="text-gray-300 mb-3 hover:text-white">Publicar vagas</a>
-            <a href="#" class="text-gray-300 mb-3 hover:text-white">Buscar Talentos</a>
-            <a href="#" class="text-gray-300 mb-3 hover:text-white">Planos</a>
+            <a href="{{ route('company.create-job') }}" class="text-gray-300 mb-3 hover:text-white">Publicar vagas</a>
+            {{-- <a href="#" class="text-gray-300 mb-3 hover:text-white">Buscar Talentos</a> --}}
+            {{-- <a href="#" class="text-gray-300 mb-3 hover:text-white">Planos</a> --}}
             <a href="#" class="text-gray-300 mb-3 hover:text-white">Suporte</a>
         </div>
     </div>
