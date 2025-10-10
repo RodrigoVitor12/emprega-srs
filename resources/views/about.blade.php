@@ -43,15 +43,15 @@
             <h2 class="font-bold mt-4 text-3xl text-center text-[#155DFC]">Nossos Números</h2>
             <div class="flex flex-col md:flex-row gap-12 justify-center items-center text-center my-8">
                 <div class="bg-white p-4 rounded-md shadow-2xl w-48 h-32">
-                    <p class="text-3xl text-[#155DFC] font-bold">10</p>
+                    <p class="text-3xl text-[#155DFC] font-bold">{{$candidateCount}}</p>
                     <p class="text-gray-500">Candidatos Cadastrados</p>
                 </div>
                 <div class="bg-white p-4 rounded-md shadow-xl w-48 h-32">
-                    <p class="text-3xl text-[#155DFC] font-bold">4</p>
+                    <p class="text-3xl text-[#155DFC] font-bold">{{$recruitCount}}</p>
                     <p class="text-gray-500">Empresas parceiras</p>
                 </div>
                 <div class="bg-white p-4 rounded-md shadow-xl w-48 h-32">
-                    <p class="text-3xl text-[#155DFC] font-bold">10</p>
+                    <p class="text-3xl text-[#155DFC] font-bold">{{$vacancies}}</p>
                     <p class="text-gray-500">Vagas Publicadas</p>
                 </div>
             </div>
@@ -88,7 +88,7 @@
         <article class="py-6">
             <div class="flex flex-col items-center">
                 <small class="bg-[#155DFC] p-2 rounded-xl text-white text-xs">Nossa Equipe</small>
-                <h2 class="font-bold mt-4 text-3xl text-[#155DFC] ">Conheça quem está por trás do EmpregaFácil</h2>
+                <h2 class="font-bold mt-4 text-3xl text-[#155DFC] ">Conheça quem está por trás do MaoNaVaga</h2>
             </div>
 
             <div class="flex flex-col md:flex-row gap-12 justify-center items-center text-center my-8 flex-wrap">
