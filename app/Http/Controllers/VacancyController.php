@@ -27,7 +27,7 @@ class VacancyController extends Controller
 
     public function show()
     {
-        $vacancies = Vacancy::all();
+        $vacancies = Vacancy::latest()->paginate(21);
 
         return view('vacancies', ['vacancies' => $vacancies]);
     }

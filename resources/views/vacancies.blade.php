@@ -26,6 +26,11 @@
                 @endforeach
             @endauth
         </div>
+        @auth
+            <div>
+                {{ $vacancies->links() }}
+            </div>
+        @endauth
 
         @guest
             <div class="flex flex-col justify-center items-center gap-6">
