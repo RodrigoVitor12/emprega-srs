@@ -7,8 +7,8 @@
             <p class="mb-3 text-md">Conectando talentos com as melhores oportunidades <br> de emprego em Santa Rita do
                 Sapucaí</p>
             <div class="flex flex-col gap-2">
-                <p class="text-md"><ion-icon name="call-outline"></ion-icon> (35) 0000-0000</p>
-                <p class="text-md"><ion-icon name="mail-outline"></ion-icon> contatoempregasrs@gmail.com</p>
+                <p class="text-md"><ion-icon name="call-outline"></ion-icon> (35) 99740-1598</p>
+                <p class="text-md"><ion-icon name="mail-outline"></ion-icon> maonavaga26@gmail.com</p>
                 <p class="text-md"><ion-icon name="location-outline"></ion-icon> Santa Rita do Sapucaí</p>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <a href="{{ route('company.create-job') }}" class="text-gray-300 mb-3 hover:text-white">Publicar vagas</a>
             {{-- <a href="#" class="text-gray-300 mb-3 hover:text-white">Buscar Talentos</a> --}}
             {{-- <a href="#" class="text-gray-300 mb-3 hover:text-white">Planos</a> --}}
-            <a href="#" class="text-gray-300 mb-3 hover:text-white">Suporte</a>
+            <a href="https://wa.me/5535997401598?text=Olá, preciso de suporte no site MaoNaVaga!" target="_blank"  class="text-gray-300 mb-3 hover:text-white">Suporte</a>
         </div>
     </div>
 
