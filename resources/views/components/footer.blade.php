@@ -33,8 +33,8 @@
     <div class="mt-3 flex justify-around">
         <p class="text-md">&copy; MaoNaVaga. Todos os direitos reservados.</p>
         <div class="flex gap-4">
-            <a href="#"><ion-icon name="logo-facebook" size="large"></ion-icon></a>
-            <a href="#"><ion-icon name="logo-instagram" size="large"></ion-icon></ion-icon></a>
+            <a href="https://www.facebook.com/profile.php?id=61582307223725" target="_blank"><ion-icon name="logo-facebook" size="large"></ion-icon></a>
+            {{-- <a href="#"><ion-icon name="logo-instagram" size="large"></ion-icon></ion-icon></a> --}}
         </div>
     </div>
 </footer>

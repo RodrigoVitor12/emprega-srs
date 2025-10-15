@@ -4,9 +4,10 @@
 
 @section('content')
     <section class="bg-gradient-to-r from-blue-500  to-blue-700 py-12 px-4">
-        <p class="text-white bg-black/10 w-16 mx-auto text-center py-2 rounded-lg"><ion-icon name="search-outline"
-                size="large"></ion-icon></p>
-        <h1 class="text-3xl font-bold text-center text-white mt-6">Sobre o EmpregaFácil</h1>
+        <p class=" w-16 mx-auto text-center py-2 rounded-lg">
+            <img src="/images/logo.png" alt="logo mao na vaga">
+        </p>
+        <h1 class="text-3xl font-bold text-center text-white mt-6">Sobre o MaoNaVaga</h1>
         <p class="text-xl mt-6 text-white md:w-[50%] mx-auto">Em uma cidade onde oportunidades são raras, nossa missão é
             transformar Santa Rita do Sapucaí em um polo de inovação. Conectamos talentos a empresas, criamos oportunidades
             reais e mostramos que, juntos, podemos construir um futuro mais brilhante e inspirador para todos. </p>
@@ -94,15 +95,16 @@
             <div class="flex flex-col md:flex-row gap-12 justify-center items-center text-center my-8 flex-wrap">
                 <div class="bg-white p-4 rounded-md shadow-2xl w-56 min-h-[220px] flex flex-col justify-between">
                     <div class="flex justify-center">
-                        <img src="/images/profile-rodrigo.jpg" alt="Foto do Rodrigo"
-                            class="w-32 h-32 object-cover rounded-full">
+                        {{-- <img src="/images/profile-rodrigo.jpg" alt="Foto do Rodrigo"
+                            class="w-32 h-32 object-cover rounded-full"> --}}
+                            <ion-icon name="person-outline"></ion-icon>
                     </div>
                     <p class="text-lg font-bold">Rodrigo Vitor</p>
                     <p class="font-bold text-sm text-blue-500">CEO, Fundador & Desenvolvedor FullStack</p>
                     <p class="text-gray-500 text-sm">Responsável pela plataforma que conecta pessoas e empresas, inovando o
                         mercado local</p>
                 </div>
-                <div class="bg-white p-4 rounded-md shadow-2xl w-56 min-h-[220px] flex flex-col justify-between it">
+                {{-- <div class="bg-white p-4 rounded-md shadow-2xl w-56 min-h-[220px] flex flex-col justify-between it">
                     <div class="flex justify-center">
                         <img src="/images/profile-joao.jpg" alt="Foto do Rodrigo"
                             class="w-32 h-32 object-cover rounded-full ">
@@ -111,7 +113,7 @@
                     <p class="font-bold text-sm text-blue-500">Head de Marketing & Redes Sociais</p>
                     <p class="text-gray-500 text-sm">Gerencia as redes sociais e impulsiona a visibilidade da plataforma,
                         fortalecendo a comunidade local.</p>
-                </div>
+                </div> --}}
             </div>
 
         </article>
