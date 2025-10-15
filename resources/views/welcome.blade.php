@@ -9,10 +9,10 @@
                 Sapucaí</h1>
             <p class="text-center text-xl mt-6 text-white">Encontre empregos e talentos na sua região com facilidade.</p>
             <div class="flex flex-col md:flex-row gap-6 justify-center mt-6">
-                <a href="#"
+                <a href="{{ route('register-company') }}"
                     class="bg-[#00A63E] hover:bg-blue-950 font-bold p-2 rounded-md text-white text-center">Cadastrar como
                     Empresa</a>
-                <a href="#"
+                <a href="{{ route('register-candidate') }}"
                     class="bg-[#155DFC] hover:bg-blue-950 text-white font-bold p-2 rounded-md text-center">Cadastrar como
                     Candidato</a>
             </div>

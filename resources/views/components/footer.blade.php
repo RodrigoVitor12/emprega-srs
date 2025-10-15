@@ -1,9 +1,9 @@
 <footer class="px-4 bg-[#155DFC] py-4 text-white">
     <div class="grid md:grid-cols-3 gap-8 mb-2 md:ml-44">
         <div>
-            <p class="mb-3 text-2xl font-bold">
+            <a href="{{ route('home') }}" class="mb-3 text-2xl font-bold">
                 <img src="/images/logo.png" alt="maonavaga">
-            </p>
+            </a>
             <p class="mb-3 text-md">Conectando talentos com as melhores oportunidades <br> de emprego em Santa Rita do
                 Sapucaí</p>
             <div class="flex flex-col gap-2">
