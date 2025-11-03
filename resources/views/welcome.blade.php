@@ -32,7 +32,7 @@
         <section class=" flex justify-center gap-6 mt-8">
             <p class="text-center text-gray-300">
                 <ion-icon name="bag-outline" size="small"></ion-icon>
-                <span class=" text-white font-bold">{{ $vacancy->count() }}</span>
+                <span class=" text-white font-bold">4</span>
                 vagas ativas
             </p>
             <p class="text-gray-300">
