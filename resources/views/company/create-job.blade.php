@@ -56,10 +56,11 @@
 
                 <!-- type -->
                 <div class="mb-4">
-                    <label for="type" class="block text-sm font-medium text-white mb-1">Tipo</label>
+                    <label for="type" class="block text-sm font-medium text-white mb-1">Tipo de Contrato</label>
                     <select id="type" name="type"
                         class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        required>
+                        required
+                        >
                         <option value="" disabled selected>Selecione o tipo</option>
                         <option value="CLT">CLT</option>
                         <option value="PJ">PJ</option>
@@ -82,7 +83,9 @@
                     <label for="address" class="block text-sm font-medium text-white mb-1">Endereço</label>
                     <input type="text" id="address" name="address"
                         placeholder="Ex: Centro, 157 - Santa Rita do Sapucai/MG"
-                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                        required
+                    />
                 </div>
 
                 <!-- E-mail or Whatsapp Contact -->
